@@ -1,11 +1,25 @@
 <template>
-        <a-layout-header class="header">
-            <a-col :span="4" class="logo"><router-link to="/">PikaVue</router-link></a-col>
-            <a-row type="flex" justify="end">
-                <a-col :span="2">User</a-col>
-                <a-col :span="2">Logout</a-col>
-            </a-row>
-    </a-layout-header>
+  <a-layout-header class="header">
+    <a-col
+      :span="4"
+      class="logo"
+    >
+      <router-link to="/">
+        PikaVue
+      </router-link>
+    </a-col>
+    <a-row
+      type="flex"
+      justify="end"
+    >
+      <a-col :span="2">
+        User
+      </a-col>
+      <a-col :span="2">
+        Logout
+      </a-col>
+    </a-row>
+  </a-layout-header>
 </template>
 
 <script>

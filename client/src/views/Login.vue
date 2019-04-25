@@ -1,20 +1,22 @@
 <template>
   <div class="login-page">
-      <input
-        type="email"
-        name="email"
-        placeholder="email"
-        v-model="email"
-        />
-      <br>
-      <input
-        type="password"
-        name="password"
-        placeholder="password"
-        v-model="password"
-      />
-      <br>
-      <button @click="register">Register</button>
+    <input
+      v-model="email"
+      type="email"
+      name="email"
+      placeholder="email"
+    >
+    <br>
+    <input
+      v-model="password"
+      type="password"
+      name="password"
+      placeholder="password"
+    >
+    <br>
+    <button @click="register">
+      Register
+    </button>
   </div>
 </template>
 
@@ -22,7 +24,7 @@
 import AuthenticationService from '../services/AuthenticationService'
 
 export default {
-  name: 'login',
+  name: 'Login',
 
   data () {
     return {

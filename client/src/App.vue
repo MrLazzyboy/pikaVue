@@ -1,14 +1,22 @@
 <template>
   <a-layout id="app">
-    <Header></Header>
-    <a-row>
-      <a-col :span="20">
-        <router-view/>
-      </a-col>
-      <a-col :span="4">
-        <Sidebar></Sidebar>
-      </a-col>
-    </a-row>
+    <Header />
+    <a-layout-content>
+      <a-row :style="{height: '100%'}">
+        <a-col
+          :span="18"
+          class="left-column"
+        >
+          <router-view />
+        </a-col>
+        <a-col
+          :span="6"
+          class="right-column"
+        >
+          <Sidebar />
+        </a-col>
+      </a-row>
+    </a-layout-content>
   </a-layout>
 </template>
 
@@ -17,7 +25,7 @@ import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     Header,
     Sidebar
@@ -32,5 +40,14 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     height: 100vh;
+  }
+
+  .right-column{
+    height: 100%;
+  }
+
+  .left-column{
+    height: 100%;
+    overflow: auto;
   }
 </style>

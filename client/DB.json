@@ -1,35 +1,44 @@
 {
-  "posts" : [
+  "users": [
     {
-      "title": "Main post title",
-      "img": "https://semantic-ui.com/images/wireframe/image.png",
-      "author": "Andrei Gorinchoy",
-      "time": null,
-      "id": 1,
-      "raiting": 0,
-      "description": "Small description of this post",
-      "content": "Main post content, Main post content Main post content Main post content Main post content Main post content"
+      "username": "Calyaca",
+      "name": "Andrey Gorincioi",
+      "id": 1
     },
     {
-      "title": "Main post title",
-      "img": "https://semantic-ui.com/images/wireframe/image.png",
-      "author": "Andrei Gorinchoy",
-      "time": null,
-      "id": 2,
-      "raiting": 0,
-      "description": "Small description of this post",
-      "content": "Main post content, Main post content Main post content Main post content Main post content Main post content"
+      "username": "dasda",
+      "name": "Andrey Gorincioi",
+      "id": 2
     },
     {
-      "title": "Main post title",
-      "img": "https://semantic-ui.com/images/wireframe/image.png",
-      "author": "Andrei Gorinchoy",
-      "time": null,
-      "id": 3,
-      "raiting": 0,
-      "description": "Small description of this post",
-      "content": "Main post content, Main post content Main post content Main post content Main post content Main post content"
+      "username": "Lasada",
+      "name": "Lass",
+      "email": "Asasa",
+      "id": 3
     },
+    {
+      "username": "MrLazzyboy",
+      "name": "Andrey Gorincioi",
+      "email": "msrlazzyboy@gmail.com",
+      "subcribtion": [],
+      "id": 4
+    },
+    {
+      "username": "sasat",
+      "name": "Dvajdy sasat",
+      "email": "dsdsldklk@kjsdkajskd.asdas",
+      "subcribtion": [],
+      "id": 5
+    },
+    {
+      "username": "Denis",
+      "name": "Denis 20",
+      "email": "aksjdkasjdk@dsdm.ru",
+      "subcribtion": [],
+      "id": 6
+    }
+  ],
+  "posts": [
     {
       "title": "Main post title",
       "img": "https://semantic-ui.com/images/wireframe/image.png",
@@ -52,7 +61,7 @@
     },
     {
       "title": "Main post title",
-      "img": "https://semantic-ui.com/images/wireframe/image.png",
+      "img": "https://pbs.twimg.com/profile_images/1080545769034108928/CEzHCTpI_400x400.jpg",
       "author": "Andrei Gorinchoy",
       "time": null,
       "id": 6,
@@ -69,15 +78,37 @@
       "raiting": 0,
       "description": "Small description of this post",
       "content": "Main post content, Main post content Main post content Main post content Main post content Main post content"
-    }
-  ],
-  "users" : [
+    },
     {
-      "name": null,
-      "email": null,
-      "nickname": null,
-      "id": null,
-      "subscription": []
+      "title": "Getetetet",
+      "description": ",xzlkxlkzxlkzlxk",
+      "content": "askdkasjdkjaskdjaksdj",
+      "author": "Andrey Gorincioi",
+      "id": 8
+    },
+    {
+      "title": "Restaorator",
+      "description": "Jdjskjdksjdks",
+      "content": "aksdaksjdlasjlkkjlkjl \nkasjdkajskdjaskjd",
+      "img": "https://pbs.twimg.com/profile_images/1080545769034108928/CEzHCTpI_400x400.jpg",
+      "author": "Andrey Gorincioi",
+      "id": 9
+    },
+    {
+      "title": "Small task for beautifull people",
+      "description": "jhhjjkasdjkashdkjhkjh",
+      "content": "kjaksdlajslkdjaklsjlajsldcauienalsjdklasdkaslkdjalksd",
+      "img": "https://pbs.twimg.com/profile_images/1080545769034108928/CEzHCTpI_400x400.jpg",
+      "author": "Andrey Gorincioi",
+      "id": 10
+    },
+    {
+      "title": "Task 212",
+      "description": "hsjahjsahsj",
+      "content": "ksdlajshdjkhsdjhsd",
+      "img": "https://pbs.twimg.com/profile_images/1080545769034108928/CEzHCTpI_400x400.jpg",
+      "author": "Denis 20",
+      "id": 11
     }
   ]
 }

@@ -4,27 +4,65 @@
       :span="4"
       class="logo"
     >
-      <router-link to="/">
-        PikaVue
-      </router-link>
+      PikaVue
     </a-col>
-    <a-row
-      type="flex"
-      justify="end"
-    >
-      <a-col :span="2">
-        User
-      </a-col>
-      <a-col :span="2">
-        Logout
-      </a-col>
-    </a-row>
+    <nav>
+      <template v-if="typeof user.id != 'undefined'">
+        <router-link
+          active-class="active"
+          exact
+          :to="{ name: 'home' }"
+        >
+          Home
+        </router-link>
+        <router-link
+          active-class="active"
+          exact
+          :to="{ name: 'create' }"
+        >
+          Create
+        </router-link>
+
+        <!-- <router-link active-class="active" exact :to="{ name: 'about' }"
+          >Events</router-link
+        > -->
+        <a
+          href="javascript:void(0)"
+          @click.prevent="logout"
+        >Logout</a>
+      </template>
+      <template v-else>
+        <router-link
+          active-class="active"
+          exact
+          :to="{ name: 'login-page' }"
+        >
+          Login
+        </router-link>
+        <router-link
+          active-class="active"
+          exact
+          :to="{ name: 'register-page' }"
+        >
+          Register
+        </router-link>
+      </template>
+    </nav>
   </a-layout-header>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
-
+  computed: {
+    ...mapState(['user'])
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('logout')
+      this.$router.push({ name: 'login-page' })
+    }
+  }
 }
 </script>
 
@@ -45,6 +83,15 @@ export default {
 
   .logo{
     font-size: 20px;
+  }
+
+  nav {
+    flex-basis: 50%;
+    text-align: right;
+    a {
+      margin-right: 50px;
+      display: inline-block;
+    }
   }
 }
 

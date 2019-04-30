@@ -1,53 +1,37 @@
 <template>
   <a-layout id="app">
     <Header />
-    <a-layout-content>
-      <a-row :style="{height: '100%'}">
-        <a-col
-          :span="18"
-          class="left-column"
-        >
-          <router-view />
-        </a-col>
-        <a-col
-          :span="6"
-          class="right-column"
-        >
-          <Sidebar />
-        </a-col>
-      </a-row>
-    </a-layout-content>
+    <router-view />
   </a-layout>
 </template>
 
 <script>
 import Header from './components/Header'
-import Sidebar from './components/Sidebar'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Sidebar
+    Header
+  },
+  created () {
+    this.$store.dispatch(
+      'fetchUser',
+      !localStorage.getItem('pikavueAuth')
+        ? {}
+        : JSON.parse(localStorage.getItem('pikavueAuth'))
+    )
+    this.$store.dispatch('fetchPosts')
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
   #app{
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
     height: 100vh;
   }
 
-  .right-column{
-    height: 100%;
-  }
-
-  .left-column{
-    height: 100%;
-    overflow: auto;
-  }
 </style>

@@ -1,45 +1,63 @@
 <template>
-  <div class="login-page">
-    <input
-      v-model="email"
-      type="email"
-      name="email"
-      placeholder="email"
-    >
-    <br>
-    <input
-      v-model="password"
-      type="password"
-      name="password"
-      placeholder="password"
-    >
-    <br>
-    <button @click="register">
-      Register
-    </button>
+  <div class="login-form">
+    <h1 class="title">
+      Login Page
+    </h1>
+    <AuthForm
+      :user="user"
+      @submitted="login"
+    />
   </div>
 </template>
 
 <script>
-import AuthenticationService from '../services/AuthenticationService'
+import request from '../services/api'
+import AuthForm from '../components/Authform.vue'
 
 export default {
-  name: 'Login',
-
+  name: 'LoginPage',
+  components: {
+    AuthForm
+  },
   data () {
     return {
-      email: '',
-      password: ''
+      user: {
+        username: null
+      }
     }
   },
   methods: {
-    async register () {
-      const response = await AuthenticationService.register({
-        email: this.email,
-        password: this.password
-      })
-      console.log(response.data)
+    login () {
+      if (!this.user.username) return alert('Username can not be empty!')
+
+      request
+        .getUser(this.user.username)
+        .then(resp => {
+          let auth = resp.data.filter(row => row.username === this.user.username)
+          if (auth.length > 0) {
+            localStorage.setItem('pikavueAuth', JSON.stringify(auth[0]))
+            this.$store.dispatch('fetchUser', auth[0])
+            this.$router.push({ path: '/' })
+          } else {
+            alert('User not found!')
+          }
+        })
+        .catch(error => {
+          console.log('Error: ', error.message)
+        })
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.login-form {
+  .title {
+    text-align: center;
+  }
+  max-width: 20%;
+  width: 100%;
+  margin: 30px auto;
+  padding: 20px 30px;
+}
+</style>

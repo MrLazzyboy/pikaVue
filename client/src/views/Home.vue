@@ -1,6 +1,5 @@
 <template>
   <a-layout class="home">
-    <h1>Resent post</h1>
     <PostList />
   </a-layout>
 </template>
@@ -28,11 +27,6 @@ export default {
 
   .home{
     padding: 50px 50px 0 50px;
-
-    h1{
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
   }
 
 </style>
